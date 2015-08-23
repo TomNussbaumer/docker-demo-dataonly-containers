@@ -14,7 +14,7 @@ Docker Volumes are a little bit strange, because the Docker CLI (commandline int
 Docker Volumes can be generated in two ways:
 
   1. in a Dockerfile with keyword 'VOLUME'
-  2. as parameter of `docker create` or `docker run'
+  2. as parameter of `docker create` or `docker run`
 
 ### Creating Docker Volumes in a Dockerfile 
   
@@ -26,7 +26,7 @@ ADD some-data /mydata
 VOLUME /mydata
 ```
 
-Let's build an image from this Dockerfile (supposing you have stored the above example in file Dockerfile and changed the add line to add some real files):
+Let's build an image from this Dockerfile (supposing you have stored the above example in file Dockerfile and changed the ADD line to add some real files):
 
 ```
 docker build --rm -t demo/mydata-image .
@@ -38,7 +38,7 @@ Since we are using `FROM scratch` the generated image contains nothing but the f
 docker create --name 'mydata-container' demo/mydata-image xyz
 ```
 
-Well, it doesn't look like something happened, but in the background a new Docker Volume was generated and bound do the container. When you call `docker inspect mydata-container` you will see the new volume listed as entry in Mounts and as entry in Volumes. During the creation of a new volume everything that is in the image below the given path (in this case: /mydata) is copied to the new volume to seed it with files.
+Well, it doesn't look like something happened, but in the background a new Docker Volume was generated and bound to the container. When you call `docker inspect mydata-container` you will see the new volume listed as entry in Mounts and as entry in Volumes. During the creation of a new volume everything that is in the image below the given path (in this case: /mydata) is copied to the new volume to seed it with files.
 
 The following commands show how to use the new volume:
 
