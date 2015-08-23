@@ -92,3 +92,14 @@ VOLUME /mydata
 
 Of course you can do much more this way than just using `chown`. You can, for example, fetch some data from a remote site and/or process the data in any way you like.
 
+**UPDATE:**
+
+The smallest image (125 Bytes) which can be used with `docker run` is [tianon/true](https://hub.docker.com/r/tianon/true/). It just contains a binary named true which exits with 0:
+
+```shell
+docker run --rm tianon/true /true
+```
+
+see also: [tianon/true on Github](https://github.com/tianon/dockerfiles/tree/master/true)
+
+This may become useful if you want to use "pure" data image, but your ochestration tool won't let you. 125 Bytes overhead seems perfect. But again: busybox also weights just 2.5 MB. If you use it in more than one images, it's share among all of them. So the overhead is also minimal.
