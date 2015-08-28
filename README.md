@@ -102,4 +102,4 @@ docker run --rm tianon/true /true
 
 see also: [tianon/true on Github](https://github.com/tianon/dockerfiles/tree/master/true)
 
-This may become useful if you want to use "pure" data image, but your ochestration tool won't let you. 125 Bytes overhead seems perfect. But again: busybox also weights just 2.5 MB. If you use it in more than one images, it's share among all of them. So the overhead is also minimal.
+This may become useful if you want to use "pure" data image, but your ochestration tool won't let you. 125 Bytes overhead seems perfect. But again: busybox also weights just 2.5 MB. If you use it in more than one images, it's shared among all of them. So the overhead is also minimal.
